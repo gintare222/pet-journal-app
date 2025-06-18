@@ -1,8 +1,13 @@
 class Pet {
   String name;
   DateTime birthDate;
+  String gender;
 
-  Pet({required this.name, required this.birthDate});
+  Pet({
+    required this.name, 
+    required this.birthDate,
+    required this.gender,
+    });
 
   int get ageInDays {
     return DateTime.now().difference(birthDate).inDays;

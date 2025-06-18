@@ -20,7 +20,7 @@ class PetListScreen extends StatelessWidget {
           return ListTile(
             title: Text(pet.name),
             subtitle: Text(
-              'Age: ${pet.ageInYears} years, ${pet.ageInMonths % 12} months, ${pet.ageInDays % 30} days'),
+              'Gender: ${pet.gender} | Age: ${pet.ageInYears} years, ${pet.ageInMonths % 12} months, ${pet.ageInDays % 30} days'),
             );
         },
       ),
