@@ -17,18 +17,24 @@ class PetListScreen extends StatelessWidget {
         itemCount: pets.length,
         itemBuilder: (context, index) {
           final pet = pets[index];
-          return ListTile(
-            title: Text(pet.name),
-            subtitle: Text(
-              'Gender: ${pet.gender} | Age: ${pet.ageInYears} years, ${pet.ageInMonths % 12} months, ${pet.ageInDays % 30} days'),
-            );
+          return Card(
+            child: ListTile(
+              title: Text(pet.name),
+              subtitle: Text(
+                'Born: ${pet.birthDate.toLocal().toString().split(' ')[0]}\n'
+                'Gender: ${pet.gender}\n'
+                'Age: ${pet.ageInYears} years, ${pet.ageInMonths % 12} months, ${pet.ageInDays % 30} days'
+              ),
+              trailing: IconButton(icon: Icon(Icons.edit), onPressed: () {}),
+            ),
+          );
         },
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
           Navigator.push(
-            context, 
+            context,
             MaterialPageRoute(builder: (_) => const AddPetScreen()),
           );
         },
